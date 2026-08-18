@@ -5,7 +5,8 @@ export function Footer() {
     <footer className="mt-24 border-t border-border py-10">
       <div className="container-dc flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="mono text-sm font-bold tracking-[0.2em]">
+          <p className="mono flex items-center gap-2 text-sm font-bold tracking-[0.2em]">
+            <img src={mark} alt="" width={24} height={24} loading="lazy" className="h-6 w-6" />
             WALLET<span className="text-toxic">GRAVE</span>
           </p>
           <p className="mt-1 text-xs text-muted-foreground">
