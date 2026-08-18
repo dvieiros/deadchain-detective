@@ -8,13 +8,13 @@ import { EXPLORER_WALLETS, formatUsd, shortAddress } from "@/lib/deadchain";
 export const Route = createFileRoute("/explorer")({
   head: () => ({
     meta: [
-      { title: "Dead Wallet Explorer — DEADCHAIN" },
+      { title: "Dead Wallet Explorer — WALLETGRAVE" },
       {
         name: "description",
         content:
           "Explore dormant and abandoned Solana wallets. Filter by value, dormancy and Dead Score.",
       },
-      { property: "og:title", content: "Dead Wallet Explorer — DEADCHAIN" },
+      { property: "og:title", content: "Dead Wallet Explorer — WALLETGRAVE" },
       {
         property: "og:description",
         content: "Browse dormant wallets across the blockchain, ranked by Dead Score and value.",

@@ -5,7 +5,7 @@ import { EXPLORER_WALLETS, formatUsd, shortAddress } from "@/lib/deadchain";
 export const Route = createFileRoute("/token/$address")({
   head: ({ params }) => {
     const short = shortAddress(params.address, 4);
-    const title = `Token ${short} — Holder Dormancy — DEADCHAIN`;
+    const title = `Token ${short} — Holder Dormancy — WALLETGRAVE`;
     const description = `Dormancy analysis for token ${short}: active, dormant and abandoned holders plus dormant supply share.`;
     return {
       meta: [

@@ -20,7 +20,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/70 backdrop-blur-xl">
       <div className="container-dc flex h-16 items-center gap-6">
         <Link to="/" className="mono text-sm font-bold tracking-[0.2em] text-foreground">
-          DEAD<span className="text-toxic">CHAIN</span>
+          WALLET<span className="text-toxic">GRAVE</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
