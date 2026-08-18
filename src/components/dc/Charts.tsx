@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Area,
   AreaChart,
@@ -44,6 +45,19 @@ const tooltipStyle = {
   cursor: { fill: "rgba(168,85,247,0.08)", stroke: "#A855F7", strokeOpacity: 0.25 },
 };
 
+function useMounted() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  return mounted;
+}
+
+/** Recharts needs a measured DOM box; render only after hydration. */
+function ClientChart({ children }: { children: React.ReactNode }) {
+  const mounted = useMounted();
+  if (!mounted) return <div className="h-full w-full animate-pulse-soft rounded-md bg-surface-2" />;
+  return <>{children}</>;
+}
+
 export function ChartCard({
   title,
   hint,
@@ -61,7 +75,9 @@ export function ChartCard({
         <p className="label-xs">{title}</p>
         {hint && <p className="mono text-[10px] text-muted-foreground">{hint}</p>}
       </div>
-      <div className="mt-6 h-[240px] w-full">{children}</div>
+      <div className="mt-6 h-[240px] w-full">
+        <ClientChart>{children}</ClientChart>
+      </div>
     </section>
   );
 }
