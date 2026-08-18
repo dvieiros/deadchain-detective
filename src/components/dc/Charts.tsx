@@ -127,7 +127,6 @@ export function StatusDonut({ data }: { data: Array<{ name: string; value: numbe
           outerRadius={84}
           paddingAngle={3}
           stroke="#05060A"
-degrees
         >
           {data.map((d, i) => (
             <Cell key={d.name} fill={palette[i % palette.length]} />
