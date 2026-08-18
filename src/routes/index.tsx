@@ -4,7 +4,14 @@ import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScanOverlay } from "@/components/dc/ScanOverlay";
-import { GLOBAL_STATS, DISCOVERIES, isValidSolanaAddress } from "@/lib/deadchain";
+import {
+  GLOBAL_STATS,
+  DISCOVERIES,
+  GRAVEYARD_TREND,
+  STATUS_BREAKDOWN,
+  isValidSolanaAddress,
+} from "@/lib/deadchain";
+import { ChartCard, GraveyardTrendChart, StatusDonut } from "@/components/dc/Charts";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -122,6 +129,18 @@ function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CHARTS */}
+      <section className="border-b border-border">
+        <div className="container-dc grid gap-6 py-14 lg:grid-cols-[2fr_1fr]">
+          <ChartCard title="Graveyard growth" hint="Last 12 months">
+            <GraveyardTrendChart data={GRAVEYARD_TREND} />
+          </ChartCard>
+          <ChartCard title="Wallet states" hint="Share of scanned wallets">
+            <StatusDonut data={STATUS_BREAKDOWN} />
+          </ChartCard>
         </div>
       </section>
 

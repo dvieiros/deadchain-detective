@@ -17,8 +17,11 @@ import {
   formatUsd,
   isValidSolanaAddress,
   shortAddress,
+  walletActivitySeries,
+  walletAssetSeries,
   type AssetStatus,
 } from "@/lib/deadchain";
+import { ActivityChart, AssetValueChart, ChartCard } from "@/components/dc/Charts";
 
 export const Route = createFileRoute("/wallet/$address")({
   head: ({ params }) => {
@@ -220,6 +223,16 @@ function WalletPage() {
               <p className="mono mt-2 text-lg font-semibold">{v}</p>
             </div>
           ))}
+        </div>
+
+        {/* CHARTS */}
+        <div className="mt-6 grid gap-6 lg:grid-cols-2">
+          <ChartCard title="Activity decay" hint="Transactions per year">
+            <ActivityChart data={walletActivitySeries(analysis)} />
+          </ChartCard>
+          <ChartCard title="Asset value" hint="Top holdings (USD)">
+            <AssetValueChart data={walletAssetSeries(analysis)} />
+          </ChartCard>
         </div>
 
         {/* ASSETS */}
