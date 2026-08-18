@@ -123,7 +123,7 @@ export function analyzeWallet(address: string): WalletAnalysis {
   let portfolioValue = solBalance * SOL_PRICE;
 
   for (let i = 0; i < assetCount; i++) {
-    const token = TOKENS[(seed + i * 7) % TOKENS.length];
+    const token = TOKENS[(seed + i * 7) % TOKENS.length]!;
     const days = Math.floor(rand() * 1500);
     const value = Math.round(rand() * 4200);
     portfolioValue += value;
@@ -160,7 +160,7 @@ export function analyzeWallet(address: string): WalletAnalysis {
       "account_open",
       "account_close",
     ];
-    const type = types[(seed + i * 3) % types.length];
+    const type = types[(seed + i * 3) % types.length]!;
     return {
       date: d.toLocaleDateString("en-US", { month: "short", day: "2-digit" }),
       year: d.getFullYear(),
