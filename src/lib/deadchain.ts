@@ -241,3 +241,48 @@ export const EXPLORER_WALLETS = [
 export const WHALES = EXPLORER_WALLETS.filter((w) => w.value > 1_000_000).sort(
   (a, b) => b.value - a.value,
 );
+
+export const GRAVEYARD_TREND = [
+  { month: "SEP", dormant: 1980, recoverable: 12.4 },
+  { month: "OCT", dormant: 2042, recoverable: 13.1 },
+  { month: "NOV", dormant: 2118, recoverable: 13.8 },
+  { month: "DEC", dormant: 2190, recoverable: 14.6 },
+  { month: "JAN", dormant: 2244, recoverable: 15.2 },
+  { month: "FEB", dormant: 2287, recoverable: 15.9 },
+  { month: "MAR", dormant: 2330, recoverable: 16.4 },
+  { month: "APR", dormant: 2372, recoverable: 17.0 },
+  { month: "MAY", dormant: 2408, recoverable: 17.5 },
+  { month: "JUN", dormant: 2437, recoverable: 18.0 },
+  { month: "JUL", dormant: 2461, recoverable: 18.4 },
+  { month: "AUG", dormant: 2481, recoverable: 18.7 },
+];
+
+export const STATUS_BREAKDOWN = [
+  { name: "Dormant", value: 54 },
+  { name: "Recoverable", value: 21 },
+  { name: "Dust", value: 16 },
+  { name: "Inactive", value: 9 },
+];
+
+export function walletActivitySeries(analysis: WalletAnalysis) {
+  const currentYear = new Date().getFullYear();
+  const years = Math.max(2, Math.round(analysis.walletAgeYears));
+  const start = currentYear - years;
+  const decay = analysis.deadScore / 100;
+  return Array.from({ length: years + 1 }).map((_, i) => {
+    const progress = i / years;
+    const weight = Math.max(0.02, (1 - progress * decay) ** 3);
+    return {
+      year: String(start + i),
+      transactions: Math.round((analysis.transactions / (years + 1)) * weight * 2),
+    };
+  });
+}
+
+export function walletAssetSeries(analysis: WalletAnalysis) {
+  return analysis.assets
+    .filter((a) => a.value > 0)
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 6)
+    .map((a) => ({ symbol: a.symbol, value: a.value }));
+}
