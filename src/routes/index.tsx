@@ -1,3 +1,4 @@
+import heroArt from "@/assets/hero-walletgrave.jpg";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, ShieldCheck } from "lucide-react";
