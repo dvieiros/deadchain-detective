@@ -34,6 +34,7 @@ export function RecoveryModal({
       }, 2200);
       return () => clearTimeout(id);
     }
+    return undefined;
   }, [step, onComplete]);
 
   return (

@@ -12,7 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AlertsRouteImport } from './routes/alerts'
 import { Route as ExplorerRouteImport } from './routes/explorer'
+import { Route as RecoverRouteImport } from './routes/recover'
+import { Route as TokensRouteImport } from './routes/tokens'
 import { Route as WhalesRouteImport } from './routes/whales'
+import { Route as TokenAddressRouteImport } from './routes/token.$address'
+import { Route as WalletAddressRouteImport } from './routes/wallet.$address'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -29,9 +33,29 @@ const ExplorerRoute = ExplorerRouteImport.update({
   path: '/explorer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RecoverRoute = RecoverRouteImport.update({
+  id: '/recover',
+  path: '/recover',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TokensRoute = TokensRouteImport.update({
+  id: '/tokens',
+  path: '/tokens',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WhalesRoute = WhalesRouteImport.update({
   id: '/whales',
   path: '/whales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TokenAddressRoute = TokenAddressRouteImport.update({
+  id: '/token/$address',
+  path: '/token/$address',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WalletAddressRoute = WalletAddressRouteImport.update({
+  id: '/wallet/$address',
+  path: '/wallet/$address',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -39,34 +63,75 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/alerts': typeof AlertsRoute
   '/explorer': typeof ExplorerRoute
+  '/recover': typeof RecoverRoute
+  '/tokens': typeof TokensRoute
   '/whales': typeof WhalesRoute
+  '/token/$address': typeof TokenAddressRoute
+  '/wallet/$address': typeof WalletAddressRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/alerts': typeof AlertsRoute
   '/explorer': typeof ExplorerRoute
+  '/recover': typeof RecoverRoute
+  '/tokens': typeof TokensRoute
   '/whales': typeof WhalesRoute
+  '/token/$address': typeof TokenAddressRoute
+  '/wallet/$address': typeof WalletAddressRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/alerts': typeof AlertsRoute
   '/explorer': typeof ExplorerRoute
+  '/recover': typeof RecoverRoute
+  '/tokens': typeof TokensRoute
   '/whales': typeof WhalesRoute
+  '/token/$address': typeof TokenAddressRoute
+  '/wallet/$address': typeof WalletAddressRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/alerts' | '/explorer' | '/whales'
+  fullPaths:
+    | '/'
+    | '/alerts'
+    | '/explorer'
+    | '/recover'
+    | '/tokens'
+    | '/whales'
+    | '/token/$address'
+    | '/wallet/$address'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/alerts' | '/explorer' | '/whales'
-  id: '__root__' | '/' | '/alerts' | '/explorer' | '/whales'
+  to:
+    | '/'
+    | '/alerts'
+    | '/explorer'
+    | '/recover'
+    | '/tokens'
+    | '/whales'
+    | '/token/$address'
+    | '/wallet/$address'
+  id:
+    | '__root__'
+    | '/'
+    | '/alerts'
+    | '/explorer'
+    | '/recover'
+    | '/tokens'
+    | '/whales'
+    | '/token/$address'
+    | '/wallet/$address'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AlertsRoute: typeof AlertsRoute
   ExplorerRoute: typeof ExplorerRoute
+  RecoverRoute: typeof RecoverRoute
+  TokensRoute: typeof TokensRoute
   WhalesRoute: typeof WhalesRoute
+  TokenAddressRoute: typeof TokenAddressRoute
+  WalletAddressRoute: typeof WalletAddressRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -92,11 +157,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExplorerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/recover': {
+      id: '/recover'
+      path: '/recover'
+      fullPath: '/recover'
+      preLoaderRoute: typeof RecoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tokens': {
+      id: '/tokens'
+      path: '/tokens'
+      fullPath: '/tokens'
+      preLoaderRoute: typeof TokensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/whales': {
       id: '/whales'
       path: '/whales'
       fullPath: '/whales'
       preLoaderRoute: typeof WhalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/token/$address': {
+      id: '/token/$address'
+      path: '/token/$address'
+      fullPath: '/token/$address'
+      preLoaderRoute: typeof TokenAddressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wallet/$address': {
+      id: '/wallet/$address'
+      path: '/wallet/$address'
+      fullPath: '/wallet/$address'
+      preLoaderRoute: typeof WalletAddressRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -106,7 +199,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AlertsRoute: AlertsRoute,
   ExplorerRoute: ExplorerRoute,
+  RecoverRoute: RecoverRoute,
+  TokensRoute: TokensRoute,
   WhalesRoute: WhalesRoute,
+  TokenAddressRoute: TokenAddressRoute,
+  WalletAddressRoute: WalletAddressRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
