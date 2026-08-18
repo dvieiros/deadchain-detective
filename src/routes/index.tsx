@@ -64,6 +64,15 @@ function Home() {
           }`}
           aria-hidden
         />
+        <img
+          src={heroArt}
+          alt="Hooded reaper holding a glowing Solana coin in a graveyard"
+          width={1536}
+          height={1024}
+          className="pointer-events-none absolute inset-y-0 right-0 h-full w-full object-cover object-right opacity-70 sm:w-[68%] lg:w-[58%]"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_18%,color-mix(in_oklab,var(--background)_70%,transparent)_52%,transparent_88%)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-[linear-gradient(to_top,var(--background),transparent)]" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,color-mix(in_oklab,var(--toxic)_10%,transparent),transparent_60%)]" />
 
         <div className="container-dc relative py-24 sm:py-32">
