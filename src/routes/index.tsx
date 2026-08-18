@@ -80,7 +80,7 @@ function Home() {
               className="mono h-14 flex-1 border-border bg-surface text-sm"
             />
             <Button type="submit" variant="toxic" size="xl" disabled={!valid}>
-              Analyze wallet <ArrowRight className="h-4 w-4" />
+              Exhume wallet <ArrowRight className="h-4 w-4" />
             </Button>
           </form>
           {typing && !valid && (

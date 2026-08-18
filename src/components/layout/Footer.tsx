@@ -9,7 +9,7 @@ export function Footer() {
             WALLET<span className="text-toxic">GRAVE</span>
           </p>
           <p className="mt-1 text-xs text-muted-foreground">
-            Find what&apos;s dead. Recover what&apos;s yours.
+            Find dead wallets. Discover forgotten assets. Recover whatFind what&apos;s dead. Recover what&apos;s yours.apos;s yours.
           </p>
         </div>
         <nav className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground">
