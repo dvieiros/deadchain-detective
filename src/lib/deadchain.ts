@@ -266,7 +266,7 @@ export const STATUS_BREAKDOWN = [
 
 export function walletActivitySeries(analysis: WalletAnalysis) {
   const currentYear = new Date().getFullYear();
-  const years = Math.max(2, Math.round(analysis.walletAgeYears));
+  const years = Math.max(5, Math.round(analysis.walletAgeYears));
   const start = currentYear - years;
   const decay = analysis.deadScore / 100;
   return Array.from({ length: years + 1 }).map((_, i) => {

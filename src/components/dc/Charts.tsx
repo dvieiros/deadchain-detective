@@ -73,7 +73,7 @@ export function GraveyardTrendChart({
 }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <AreaChart data={data} margin={{ top: 4, right: 4, left: -20, bottom: 0 }}>
+      <AreaChart data={data} margin={{ top: 4, right: 8, left: 4, bottom: 0 }}>
         <defs>
           <linearGradient id="gDormant" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor={CHART_COLORS.violet} stopOpacity={0.55} />
@@ -86,7 +86,7 @@ export function GraveyardTrendChart({
         </defs>
         <CartesianGrid stroke="#1E2532" vertical={false} />
         <XAxis dataKey="month" tickLine={false} axisLine={false} {...AXIS} />
-        <YAxis yAxisId="left" tickLine={false} axisLine={false} width={48} {...AXIS} />
+        <YAxis yAxisId="left" tickLine={false} axisLine={false} width={56} {...AXIS} />
         <YAxis
           yAxisId="right"
           orientation="right"
@@ -163,10 +163,10 @@ export function StatusDonut({ data }: { data: Array<{ name: string; value: numbe
 export function AssetValueChart({ data }: { data: Array<{ symbol: string; value: number }> }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={data} margin={{ top: 4, right: 4, left: -20, bottom: 0 }}>
+      <BarChart data={data} margin={{ top: 4, right: 8, left: 4, bottom: 0 }}>
         <CartesianGrid stroke="#1E2532" vertical={false} />
         <XAxis dataKey="symbol" tickLine={false} axisLine={false} {...AXIS} />
-        <YAxis tickLine={false} axisLine={false} width={48} {...AXIS} />
+        <YAxis tickLine={false} axisLine={false} width={56} {...AXIS} />
         <Tooltip {...tooltipStyle} />
         <Bar dataKey="value" name="USD value" radius={[3, 3, 0, 0]} isAnimationActive={false}>
           {data.map((d, i) => (
@@ -185,10 +185,10 @@ export function ActivityChart({
 }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart data={data} margin={{ top: 4, right: 4, left: -20, bottom: 0 }}>
+      <LineChart data={data} margin={{ top: 4, right: 8, left: 4, bottom: 0 }}>
         <CartesianGrid stroke="#1E2532" vertical={false} />
         <XAxis dataKey="year" tickLine={false} axisLine={false} {...AXIS} />
-        <YAxis tickLine={false} axisLine={false} width={48} {...AXIS} />
+        <YAxis tickLine={false} axisLine={false} width={56} {...AXIS} />
         <Tooltip {...tooltipStyle} />
         <Line
           type="monotone"
