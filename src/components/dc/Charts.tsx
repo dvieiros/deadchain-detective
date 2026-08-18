@@ -86,23 +86,35 @@ export function GraveyardTrendChart({
         </defs>
         <CartesianGrid stroke="#1E2532" vertical={false} />
         <XAxis dataKey="month" tickLine={false} axisLine={false} {...AXIS} />
-        <YAxis tickLine={false} axisLine={false} width={48} {...AXIS} />
+        <YAxis yAxisId="left" tickLine={false} axisLine={false} width={48} {...AXIS} />
+        <YAxis
+          yAxisId="right"
+          orientation="right"
+          tickLine={false}
+          axisLine={false}
+          width={36}
+          {...AXIS}
+        />
         <Tooltip {...tooltipStyle} />
         <Area
+          yAxisId="left"
           type="monotone"
           dataKey="dormant"
           name="Dormant wallets (k)"
           stroke={CHART_COLORS.violet}
           strokeWidth={2}
           fill="url(#gDormant)"
+          isAnimationActive={false}
         />
         <Area
+          yAxisId="right"
           type="monotone"
           dataKey="recoverable"
           name="Recoverable ($M)"
           stroke={CHART_COLORS.teal}
           strokeWidth={2}
           fill="url(#gRecoverable)"
+          isAnimationActive={false}
         />
       </AreaChart>
     </ResponsiveContainer>
@@ -127,6 +139,7 @@ export function StatusDonut({ data }: { data: Array<{ name: string; value: numbe
           outerRadius={84}
           paddingAngle={3}
           stroke="#05060A"
+          isAnimationActive={false}
         >
           {data.map((d, i) => (
             <Cell key={d.name} fill={palette[i % palette.length]} />
@@ -155,7 +168,7 @@ export function AssetValueChart({ data }: { data: Array<{ symbol: string; value:
         <XAxis dataKey="symbol" tickLine={false} axisLine={false} {...AXIS} />
         <YAxis tickLine={false} axisLine={false} width={48} {...AXIS} />
         <Tooltip {...tooltipStyle} />
-        <Bar dataKey="value" name="USD value" radius={[3, 3, 0, 0]}>
+        <Bar dataKey="value" name="USD value" radius={[3, 3, 0, 0]} isAnimationActive={false}>
           {data.map((d, i) => (
             <Cell key={d.symbol} fill={i % 2 ? CHART_COLORS.crypt : CHART_COLORS.violet} />
           ))}
@@ -185,6 +198,7 @@ export function ActivityChart({
           strokeWidth={2}
           dot={{ r: 3, fill: CHART_COLORS.teal, strokeWidth: 0 }}
           activeDot={{ r: 5 }}
+          isAnimationActive={false}
         />
       </LineChart>
     </ResponsiveContainer>
