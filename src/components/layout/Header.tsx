@@ -1,3 +1,4 @@
+import mark from "@/assets/walletgrave-mark.png";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, Search, X, Wallet } from "lucide-react";

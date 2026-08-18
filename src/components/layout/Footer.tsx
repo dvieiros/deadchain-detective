@@ -1,3 +1,4 @@
+import mark from "@/assets/walletgrave-mark.png";
 import { Link } from "@tanstack/react-router";
 
 export function Footer() {
