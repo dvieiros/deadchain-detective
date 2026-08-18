@@ -31,7 +31,7 @@ export function SearchDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-lg">
         <DialogHeader>
-          <DialogTitle className="label-xs">Search DEADCHAIN</DialogTitle>
+          <DialogTitle className="label-xs">Search WALLETGRAVE</DialogTitle>
         </DialogHeader>
         <form
           onSubmit={(e) => {

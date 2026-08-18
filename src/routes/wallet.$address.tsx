@@ -23,7 +23,7 @@ import {
 export const Route = createFileRoute("/wallet/$address")({
   head: ({ params }) => {
     const short = shortAddress(params.address, 4);
-    const title = `Dead Wallet ${short} — DEADCHAIN`;
+    const title = `Dead Wallet ${short} — WALLETGRAVE`;
     const description = `Wallet autopsy for ${short} on Solana: Dead Score, dormancy period, assets and recoverable account rent.`;
     return {
       meta: [

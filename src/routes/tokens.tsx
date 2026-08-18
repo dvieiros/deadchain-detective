@@ -4,13 +4,13 @@ import { StatusBadge } from "@/components/dc/StatusBadge";
 export const Route = createFileRoute("/tokens")({
   head: () => ({
     meta: [
-      { title: "Token Intelligence — DEADCHAIN" },
+      { title: "Token Intelligence — WALLETGRAVE" },
       {
         name: "description",
         content:
           "Analyze Solana tokens by holder dormancy: active, dormant and abandoned supply distribution.",
       },
-      { property: "og:title", content: "Token Intelligence — DEADCHAIN" },
+      { property: "og:title", content: "Token Intelligence — WALLETGRAVE" },
       {
         property: "og:description",
         content: "See how much of a token's supply is held by dead wallets.",

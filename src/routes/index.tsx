@@ -9,13 +9,13 @@ import { GLOBAL_STATS, DISCOVERIES, isValidSolanaAddress } from "@/lib/deadchain
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DEADCHAIN — Find what's dead. Recover what's yours." },
+      { title: "WALLETGRAVE — Find what's dead. Recover what's yours." },
       {
         name: "description",
         content:
           "Discover dormant wallets, abandoned assets and recoverable funds on Solana. Scan any wallet in seconds. No wallet connection required.",
       },
-      { property: "og:title", content: "DEADCHAIN — The Crypto Graveyard" },
+      { property: "og:title", content: "WALLETGRAVE — The Graveyard of Crypto" },
       {
         property: "og:description",
         content:
@@ -60,7 +60,7 @@ function Home() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,color-mix(in_oklab,var(--toxic)_10%,transparent),transparent_60%)]" />
 
         <div className="container-dc relative py-24 sm:py-32">
-          <p className="label-xs">The Crypto Graveyard</p>
+          <p className="label-xs">The Graveyard of Crypto</p>
           <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
             Find what&apos;s dead.
             <br />
@@ -125,9 +125,9 @@ function Home() {
         </div>
       </section>
 
-      {/* WHAT IS DEADCHAIN */}
+      {/* WHAT IS WALLETGRAVE */}
       <section className="container-dc py-20">
-        <p className="label-xs">What is DEADCHAIN?</p>
+        <p className="label-xs">What is WALLETGRAVE?</p>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {[
             {

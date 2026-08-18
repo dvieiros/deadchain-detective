@@ -7,13 +7,13 @@ import { shortAddress } from "@/lib/deadchain";
 export const Route = createFileRoute("/alerts")({
   head: () => ({
     meta: [
-      { title: "Wallet Alerts — DEADCHAIN" },
+      { title: "Wallet Alerts — WALLETGRAVE" },
       {
         name: "description",
         content:
           "Watch dormant wallets and get notified when they wake up, move tokens or change balance.",
       },
-      { property: "og:title", content: "Wallet Alerts — DEADCHAIN" },
+      { property: "og:title", content: "Wallet Alerts — WALLETGRAVE" },
       {
         property: "og:description",
         content: "Get notified when a dormant whale finally moves. Coming soon.",

@@ -8,13 +8,13 @@ import { isValidSolanaAddress } from "@/lib/deadchain";
 export const Route = createFileRoute("/recover")({
   head: () => ({
     meta: [
-      { title: "Recover Solana Rent — DEADCHAIN" },
+      { title: "Recover Solana Rent — WALLETGRAVE" },
       {
         name: "description",
         content:
           "Scan your Solana wallet, close empty token accounts and reclaim rent. You always see the transaction before signing.",
       },
-      { property: "og:title", content: "Recover Solana Rent — DEADCHAIN" },
+      { property: "og:title", content: "Recover Solana Rent — WALLETGRAVE" },
       {
         property: "og:description",
         content: "Close forgotten empty token accounts and recover SOL in a single signature.",

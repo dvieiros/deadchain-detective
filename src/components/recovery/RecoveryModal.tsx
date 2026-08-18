@@ -161,7 +161,7 @@ export function RecoveryModal({
               </Button>
             </div>
             <div className="rounded-lg border border-border bg-surface p-5 text-left">
-              <p className="mono text-[11px] tracking-[0.2em] text-toxic">DEADCHAIN</p>
+              <p className="mono text-[11px] tracking-[0.2em] text-toxic">WALLETGRAVE</p>
               <p className="mono mt-3 text-sm">WALLET CLEANED</p>
               <p className="mono mt-1 text-xs text-muted-foreground">
                 {analysis.recoverable.emptyAccounts} accounts removed · {net} SOL recovered

@@ -5,13 +5,13 @@ import { WHALES, formatUsd, shortAddress } from "@/lib/deadchain";
 export const Route = createFileRoute("/whales")({
   head: () => ({
     meta: [
-      { title: "Dormant Whales — DEADCHAIN" },
+      { title: "Dormant Whales — WALLETGRAVE" },
       {
         name: "description",
         content:
           "Track Solana wallets that hold serious money but haven't moved in years. Ranked by portfolio value and dormancy.",
       },
-      { property: "og:title", content: "Dormant Whales — DEADCHAIN" },
+      { property: "og:title", content: "Dormant Whales — WALLETGRAVE" },
       {
         property: "og:description",
         content: "Whale wallets holding millions, silent for years. Explore the graveyard.",

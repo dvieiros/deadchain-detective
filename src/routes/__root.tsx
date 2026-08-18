@@ -81,13 +81,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DEADCHAIN — Find what's dead. Recover what's yours." },
+      { title: "WALLETGRAVE — Find what's dead. Recover what's yours." },
       {
         name: "description",
         content:
           "Blockchain intelligence for dormant wallets, abandoned assets and recoverable funds on Solana.",
       },
-      { name: "author", content: "DEADCHAIN" },
+      { name: "author", content: "WALLETGRAVE" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

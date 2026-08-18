@@ -20,7 +20,7 @@ export function Footer() {
         </nav>
       </div>
       <p className="container-dc mono mt-6 text-[11px] text-muted-foreground">
-        Never share your seed phrase or private key. DEADCHAIN will never ask for them.
+        Never share your seed phrase or private key. WALLETGRAVE will never ask for them.
       </p>
     </footer>
   );
