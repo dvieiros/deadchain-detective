@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container-dc flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="mono text-sm font-bold tracking-[0.2em]">
-            DEAD<span className="text-toxic">CHAIN</span>
+            WALLET<span className="text-toxic">GRAVE</span>
           </p>
           <p className="mt-1 text-xs text-muted-foreground">
             Find what&apos;s dead. Recover what&apos;s yours.
